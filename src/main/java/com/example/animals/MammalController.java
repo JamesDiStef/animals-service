@@ -23,4 +23,10 @@ public class MammalController {
         species = species.toLowerCase();
         return mammalService.getMammalBySpecies(species);
     }
+
+    @PostMapping("/mammal")
+    public void addMammal(@RequestBody Mammal mammal){
+        System.out.println(mammal);
+        mammalService.addMammal(mammal);
+    }
 }

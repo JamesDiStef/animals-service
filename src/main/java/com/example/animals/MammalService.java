@@ -18,4 +18,8 @@ public class MammalService {
         species = species.toLowerCase();
         return mammalRepository.findMammalBySpecies(species);
     }
+
+    public void addMammal(Mammal mammal) {
+        mammalRepository.insert(mammal);
+    }
 }
