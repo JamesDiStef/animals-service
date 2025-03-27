@@ -13,4 +13,9 @@ public class MammalService {
     public List<Mammal> getAllMammals() {
         return mammalRepository.findAll();
     }
+
+    public Optional<Mammal> getMammalBySpecies(String species) {
+        species = species.toLowerCase();
+        return mammalRepository.findMammalBySpecies(species);
+    }
 }
