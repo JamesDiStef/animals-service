@@ -9,7 +9,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/v1/mammals")
 @AllArgsConstructor
-@CrossOrigin(origins = {"http://localhost:8080", "https://rococo-lokum-be94cf.netlify.app/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://rococo-lokum-be94cf.netlify.app/"})
 public class MammalController {
     private final MammalService mammalService;
 
