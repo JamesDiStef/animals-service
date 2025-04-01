@@ -29,4 +29,11 @@ public class MammalController {
         System.out.println(mammal);
         mammalService.addMammal(mammal);
     }
+
+    @PatchMapping("/{speciesName}")
+    public Mammal updateMammalDescription(@PathVariable String speciesName, @RequestBody Mammal mammal) {
+        speciesName = speciesName.toLowerCase();  // Convert to lowercase or handle as per your requirement
+        return mammalService.updateDescription(speciesName, mammal.getDescription());
+    }
+
 }
