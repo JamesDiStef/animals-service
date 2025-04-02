@@ -9,7 +9,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/v1/entries")
 @AllArgsConstructor
-@CrossOrigin(origins = {"http://localhost:4200", "https://rococo-lokum-be94cf.netlify.app/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://rococo-lokum-be94cf.netlify.app/", "https://encyclopedia-j.netlify.app/"})
 public class EntryController {
     private final EntryService entryService;
 
@@ -26,10 +26,7 @@ public class EntryController {
 
     @PostMapping("/entry")
     public void addEntry(@RequestBody Entry entry){
-        System.out.println(entry.getTopic());
         entry.setTopic(entry.getTopic().toLowerCase());
-        System.out.println(entry.getTopic());
-        System.out.println(entry);
         entryService.addEntry(entry);
     }
 
